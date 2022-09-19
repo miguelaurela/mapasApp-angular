@@ -1,0 +1,17 @@
+<div #mapa class="mapa-container"></div>
+
+<div class="list-group">
+    <div class="list-group-item list-group-item-info"
+        (click)="agregarMarcador()">
+        + marcar
+    </div>
+
+    <div class="list-group-item" 
+    *ngFor="let item of marcadores; let i=index"
+        (click)="irMarcador(item.marker!)"
+        [ngStyle]="{
+            'background-color':item.color
+        }" >
+        marker {{i+1}}
+    </div>
+</div>
